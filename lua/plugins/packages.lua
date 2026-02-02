@@ -6,14 +6,13 @@ return {
 			"BurntSushi/ripgrep"
 		}
 	},
-	{ "catppuccin/nvim",         name = "catppuccin", priority = 1000 },
+	{ "catppuccin/nvim",        name = "catppuccin", priority = 1000 },
 	{
 		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
 		build = ":TSUpdate"
 	},
 	{ "mbbill/undotree" },
-	{ "ThePrimeagen/vim-be-good" },
 	{ "williamboman/mason.nvim" },
 	{ "neovim/nvim-lspconfig" },
 	{
@@ -76,7 +75,6 @@ return {
 		end,
 	},
 	{ "antosha417/nvim-lsp-file-operations", config = {} },
-	{ "folke/lazydev.nvim",                  opts = {} },
 	{
 		"stevearc/conform.nvim",
 		lazy = false,
@@ -109,5 +107,4 @@ return {
 			},
 		},
 	},
-	{ "mfussenegger/nvim-jdtls" }
 }
