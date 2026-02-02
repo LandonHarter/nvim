@@ -6,7 +6,7 @@ return {
 			"BurntSushi/ripgrep"
 		}
 	},
-	{ "catppuccin/nvim",        name = "catppuccin", priority = 1000 },
+	{ "sainnhe/everforest", name = "everforest", priority = 1000 },
 	{
 		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
@@ -52,8 +52,8 @@ return {
 					end,
 				},
 				mapping = cmp.mapping.preset.insert({
-					["<C-k>"] = cmp.mapping.select_prev_item(),
-					["<C-m>"] = cmp.mapping.select_next_item(),
+					["<C-Up>"] = cmp.mapping.select_prev_item(),
+					["<C-Down>"] = cmp.mapping.select_next_item(),
 					["<C-Space>"] = cmp.mapping.complete(),
 					["<Esc>"] = cmp.mapping.abort(),
 					-- ["<C-Space>"] = cmp.mapping.confirm({ select = false }),
@@ -107,4 +107,6 @@ return {
 			},
 		},
 	},
+    { "nvim-tree/nvim-tree.lua" },
+    { "nvim-tree/nvim-web-devicons" }
 }
