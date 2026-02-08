@@ -97,14 +97,19 @@ return {
                 }
             end,
             formatters_by_ft = {
-                javascript = { "prettier" },
-                typescript = { "prettier" },
-                css = { "prettier" },
-                html = { "prettier" },
-                json = { "prettier" },
-                yaml = { "prettier" },
-                markdown = { "prettier" },
+                javascript = { "prettier_bun" },
+                javascriptreact = { "prettier_bun" },
+                typescript = { "prettier_bun" },
+                typescriptreact = { "prettier_bun" },
+                css = { "prettier_bun" },
+                html = { "prettier_bun" },
+                json = { "prettier_bun" },
+                yaml = { "prettier_bun" },
+                markdown = { "prettier_bun" },
             },
+            formatters = {
+                prettier_bun = { command = "bun", args = { "x", "prettier", "--stdin-filepath", "$FILENAME" }, stdin = true },
+            }
         },
     },
     { "nvim-tree/nvim-tree.lua" },
