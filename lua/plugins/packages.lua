@@ -4,7 +4,12 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
             "BurntSushi/ripgrep"
-        }
+        },
+        callback = function(event)
+            local builtin = require("telescope.builtin")
+            vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = event.buf })
+            vim.keymap.set("n", "gI", builtin.lsp_implementations, { buffer = event.buf })
+        end
     },
     { "sainnhe/everforest",     name = "everforest", priority = 1000 },
     {
@@ -56,7 +61,7 @@ return {
                     ["<C-Down>"] = cmp.mapping.select_next_item(),
                     ["<C-Space>"] = cmp.mapping.complete(),
                     ["<Esc>"] = cmp.mapping.abort(),
-                    -- ["<C-Space>"] = cmp.mapping.confirm({ select = false }),
+                    ["<C-y>"] = cmp.mapping.confirm({ select = true }),
                 }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
@@ -117,5 +122,25 @@ return {
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
-    }
+    },
+    {
+        "athar-qadri/weather.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim", -- Required for HTTP requests
+            "rcarriga/nvim-notify",  -- Optional, for notifications
+        },
+        config = function()
+            local weather = require("weather")
+            weather:setup({
+                settings = {
+                    update_interval = 60 * 10 * 1000,
+                    minimum_magnitude = 5,
+                    temperature_unit = "fahrenheit",
+                },
+            })
+        end,
+    },
+    { "numToStr/Comment.nvim" },
+    { "windwp/nvim-ts-autotag" },
+    { "m4xshen/autoclose.nvim" }
 }
