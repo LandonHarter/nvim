@@ -14,6 +14,10 @@ local function my_on_attach(bufnr)
 
     vim.keymap.set('n', '<C-p>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
     vim.keymap.set('n', '<C-l>', ':NvimTreeFocus<CR>', { noremap = true, silent = true })
+
+    local builtin = require('telescope.builtin')
+    vim.keymap.set('n', '<C-e>', builtin.find_files, { buffer = bufnr, noremap = true, silent = true })
+    vim.keymap.set('n', '<C-f>', builtin.live_grep, { buffer = bufnr, noremap = true, silent = true })
 end
 
 require("nvim-tree").setup({
