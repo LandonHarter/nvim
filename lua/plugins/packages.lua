@@ -60,7 +60,7 @@ return {
                     ["<C-Up>"] = cmp.mapping.select_prev_item(),
                     ["<C-Down>"] = cmp.mapping.select_next_item(),
                     ["<C-Space>"] = cmp.mapping.complete(),
-                    ["<Esc>"] = cmp.mapping.abort(),
+                    -- ["<Esc>"] = cmp.mapping.abort(),
                     ["<C-y>"] = cmp.mapping.confirm({ select = true }),
                 }),
                 sources = cmp.config.sources({
@@ -142,5 +142,4 @@ return {
     },
     { "numToStr/Comment.nvim" },
     { "windwp/nvim-ts-autotag" },
-    { "m4xshen/autoclose.nvim" }
-}
+    { "m4xshen/autoclose.nvim" } }
