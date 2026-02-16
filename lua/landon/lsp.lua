@@ -1,6 +1,13 @@
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("ts_ls")
 vim.lsp.enable("jsonls")
+vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("clangd")
+vim.lsp.enable("prismals")
+vim.lsp.enable("bashls")
+vim.lsp.enable("dockerls")
+vim.lsp.enable("glsl_analyzer")
+vim.lsp.enable("tailwindcss")
 
 local severity = vim.diagnostic.severity
 vim.diagnostic.config({
