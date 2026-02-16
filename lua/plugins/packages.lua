@@ -142,4 +142,13 @@ return {
     },
     { "numToStr/Comment.nvim" },
     { "windwp/nvim-ts-autotag" },
-    { "m4xshen/autoclose.nvim" } }
+    { "m4xshen/autoclose.nvim" },
+    {
+        "kylechui/nvim-surround",
+        version = "^3.0.0",
+        event = "VeryLazy",
+        config = function()
+            require("nvim-surround").setup({})
+        end
+    }
+}
