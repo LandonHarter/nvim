@@ -1,8 +1,9 @@
 require("landon")
 require("config.lazy")
 
-vim.cmd.colorscheme "everforest"
+vim.cmd.colorscheme "nord"
 
+vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.wrap = false
 
@@ -19,6 +20,8 @@ vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
+
+vim.keymap.set("n", "dr", "v$hd<Esc>")
 
 for _, mode in pairs({ 'n', 'i', 'v' }) do
     vim.keymap.set(mode, '<Up>', '<Nop>', { noremap = true, silent = true })

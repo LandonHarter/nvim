@@ -13,6 +13,14 @@ return {
     },
     { "sainnhe/everforest",     name = "everforest", priority = 1000 },
     {
+        "gbprod/nord.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("nord").setup {}
+        end
+    },
+    {
         "nvim-treesitter/nvim-treesitter",
         lazy = false,
         build = ":TSUpdate"
@@ -150,5 +158,6 @@ return {
         config = function()
             require("nvim-surround").setup({})
         end
-    }
+    },
+    { "onsails/lspkind.nvim", event = { "InsertEnter" } }
 }
