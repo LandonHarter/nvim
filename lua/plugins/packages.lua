@@ -159,5 +159,5 @@ return {
             require("nvim-surround").setup({})
         end
     },
-    { "onsails/lspkind.nvim", event = { "InsertEnter" } }
+    { "onsails/lspkind.nvim", event = { "InsertEnter" } },
 }

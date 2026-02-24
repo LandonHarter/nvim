@@ -82,7 +82,7 @@ cmp.setup({
 
             local item = entry:get_completion_item()
             if entry.source.name == "nvim_lsp" and item.detail then
-                vim_item.menu = item.detail
+                vim_item.menu = string.sub(item.detail, 1, 50) .. "..."
             else
                 vim_item.menu = ({
                     buffer = "[Buf]",
