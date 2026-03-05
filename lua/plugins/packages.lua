@@ -67,9 +67,9 @@ return {
                 mapping = cmp.mapping.preset.insert({
                     ["<C-Up>"] = cmp.mapping.select_prev_item(),
                     ["<C-Down>"] = cmp.mapping.select_next_item(),
-                    ["<C-Space>"] = cmp.mapping.complete(),
                     -- ["<Esc>"] = cmp.mapping.abort(),
-                    ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+                    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                    ["<C-n>"] = cmp.mapping.complete(),
                 }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },

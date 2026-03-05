@@ -8,6 +8,7 @@ vim.lsp.enable("bashls")
 vim.lsp.enable("dockerls")
 vim.lsp.enable("glsl_analyzer")
 vim.lsp.enable("tailwindcss")
+vim.lsp.enable("jdtls")
 
 local severity = vim.diagnostic.severity
 vim.diagnostic.config({

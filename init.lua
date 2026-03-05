@@ -23,6 +23,23 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 vim.keymap.set("n", "dr", "v$hd<Esc>")
+vim.keymap.set("n", "cp", function()
+    local char = vim.fn.getcharstr()
+
+    if char == '\27' or char == '\3' then
+        return
+    end
+
+    local line = vim.api.nvim_get_current_line()
+    local _, col = unpack(vim.api.nvim_win_get_cursor(0))
+
+    local start_idx, end_idx = string.find(line, char, col + 1, true)
+    if end_idx then
+        local new_line = string.sub(line, 1, end_idx)
+        vim.api.nvim_set_current_line(new_line)
+        vim.cmd('startinsert!')
+    end
+end)
 
 for _, mode in pairs({ 'n', 'i', 'v' }) do
     vim.keymap.set(mode, '<Up>', '<Nop>', { noremap = true, silent = true })

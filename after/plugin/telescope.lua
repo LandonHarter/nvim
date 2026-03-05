@@ -7,6 +7,9 @@ require("telescope").setup({
             ".git",
             ".next",
             ".claude",
+            "target",
+            "META-INF",
+            ".cache",
         }
     },
     pickers = {

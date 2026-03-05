@@ -33,13 +33,6 @@ require("nvim-tree").setup({
     },
     filters = {
         dotfiles = false,
-        git_ignored = true,
-        exclude = {
-            ".env",
-            ".env.local",
-            ".env.development",
-            ".env.production",
-            "CLAUDE.md"
-        }
+        git_ignored = false,
     },
 })
