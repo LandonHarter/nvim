@@ -5,11 +5,15 @@ return {
             "nvim-lua/plenary.nvim",
             "BurntSushi/ripgrep"
         },
-        callback = function(event)
-            local builtin = require("telescope.builtin")
-            vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = event.buf })
-            vim.keymap.set("n", "gI", builtin.lsp_implementations, { buffer = event.buf })
-        end
+        config = function()
+            vim.api.nvim_create_autocmd("LspAttach", {
+                callback = function(event)
+                    local builtin = require("telescope.builtin")
+                    vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = event.buf })
+                    vim.keymap.set("n", "gI", builtin.lsp_implementations, { buffer = event.buf })
+                end,
+            })
+        end,
     },
     { "sainnhe/everforest",     name = "everforest", priority = 1000 },
     {
