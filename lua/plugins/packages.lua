@@ -15,7 +15,8 @@ return {
             })
         end,
     },
-    { "sainnhe/everforest",     name = "everforest", priority = 1000 },
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    { "sainnhe/everforest",                       name = "everforest", priority = 1000 },
     {
         "gbprod/nord.nvim",
         lazy = false,
@@ -106,13 +107,7 @@ return {
             },
         },
         opts = {
-            format_on_save = function(bufnr)
-                local disable_filetypes = { c = true, cpp = true }
-                return {
-                    timeout_ms = 500,
-                    lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
-                }
-            end,
+            format_on_save = false,
             formatters_by_ft = {
                 javascript = { "prettier_bun" },
                 javascriptreact = { "prettier_bun" },
@@ -164,4 +159,5 @@ return {
         end
     },
     { "onsails/lspkind.nvim", event = { "InsertEnter" } },
+    { "theprimeagen/harpoon", branch = "harpoon2", dependencies = { "nvim-lua/plenary.nvim" } },
 }
