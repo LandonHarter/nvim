@@ -1,3 +1,4 @@
+-- Config names: https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/configs
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("ts_ls")
 vim.lsp.enable("jsonls")
@@ -6,9 +7,8 @@ vim.lsp.enable("clangd")
 vim.lsp.enable("prismals")
 vim.lsp.enable("bashls")
 vim.lsp.enable("dockerls")
-vim.lsp.enable("glsl_analyzer")
 vim.lsp.enable("tailwindcss")
-vim.lsp.enable("jdtls")
+vim.lsp.enable("terraformls")
 
 local severity = vim.diagnostic.severity
 vim.diagnostic.config({

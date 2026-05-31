@@ -12,12 +12,14 @@ require("telescope").setup({
             ".cache",
         }
     },
-    pickers = {
-        find_files = {
-            hidden = true,
-            no_ignore = true,
-        },
-    },
+    extensions = {
+        fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = "smart_case",
+        }
+    }
 })
 
 vim.keymap.set('n', '<C-e>', builtin.find_files, { desc = 'Telescope find files' })
