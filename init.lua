@@ -21,6 +21,8 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
+vim.keymap.set("n", "<C-w>", function() vim.opt.wrap = not vim.opt.wrap:get() end)
+
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
@@ -46,8 +48,8 @@ vim.keymap.set("n", "cp", function()
 end)
 
 for _, mode in pairs({ 'n', 'i', 'v' }) do
-    vim.keymap.set(mode, '<Up>', '<Nop>', { noremap = true, silent = true })
-    vim.keymap.set(mode, '<Down>', '<Nop>', { noremap = true, silent = true })
-    vim.keymap.set(mode, '<Left>', '<Nop>', { noremap = true, silent = true })
-    vim.keymap.set(mode, '<Right>', '<Nop>', { noremap = true, silent = true })
+    vim.keymap.set(mode, '<Up>', '<cmd>resize -5<CR>', { noremap = true, silent = true })
+    vim.keymap.set(mode, '<Down>', '<cmd>resize +5<CR>', { noremap = true, silent = true })
+    vim.keymap.set(mode, '<Left>', '<cmd>vertical resize +5<CR>', { noremap = true, silent = true })
+    vim.keymap.set(mode, '<Right>', '<cmd>vertical resize -5<CR>', { noremap = true, silent = true })
 end
